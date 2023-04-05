@@ -1,0 +1,66 @@
+﻿@model EntityLayer.Mezun
+@{
+    ViewBag.Title = "AddMezun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Mezun Ekleme</h2>
+<br />
+@using (Html.BeginForm("AddMezun", "Mezun", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.Label("Adı Soyadı")
+                    @Html.TextBoxFor(x => x.adSoyad, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.adSoyad)
+                    <br />
+                    @Html.Label("Adresi")
+                    @Html.TextBoxFor(x => x.adres, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.adres)
+                    <br />
+                    @Html.Label("Telefonu")
+                    @Html.TextBoxFor(x => x.tel, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.tel)
+                    <br />
+                    @Html.Label("Maili")
+                    @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.mail)
+                    <br />
+                    @Html.Label("Doğum Tarihi")
+                    @Html.TextBoxFor(x => x.dogumTarih, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.dogumTarih)
+                    <br />
+                    @Html.Label("Öğrenci No")
+                    @Html.TextBoxFor(x => x.ogrNo, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ogrNo)
+                    <br />
+                    @Html.Label("Yabancı Dil")
+                    @Html.TextBoxFor(x => x.yabanciDil, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.yabanciDil)
+                    <br />
+                    @Html.Label("Bölüm")
+                    @Html.DropDownListFor(x => x.bolumId, (List<SelectListItem>)ViewBag.vlb, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Başlangıç Yılı")
+                    @Html.TextBoxFor(x => x.baslangicYil, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.baslangicYil)
+                    <br />
+                    @Html.Label("Bitiş Yılı")
+                    @Html.TextBoxFor(x => x.bitisYil, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.bitisYil)
+                    <br />
+                    @Html.Label("Ortalama")
+                    @Html.TextBoxFor(x => x.ortalama, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ortalama)
+                    <br />
+                    @Html.Label("İlgi Alanı")
+                    @Html.TextBoxFor(x => x.ilgiAlan, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ilgiAlan)
+                    <br />
+                    @Html.Label("Staj Yeri")
+                    @Html.TextBoxFor(x => x.stajYer, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.stajYer)
+                    <br />
+                    <button class="btn btn-info">Mezun Ekle</button>
+                </div>
+            }
+

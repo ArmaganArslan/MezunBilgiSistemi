@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Bolum
+
+@{
+    ViewBag.Title = "UpdateBolum";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Bölüm Güncelleme</h2>
+@using (Html.BeginForm("UpdateBolum", "Bolum", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.bolumId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Fakülte")
+        @Html.DropDownListFor(x => x.fakulteId, (List<SelectListItem>)ViewBag.vlf, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Bölüm Adı")
+        @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+        <br />
+        @Html.Label("Adres")
+        @Html.TextBoxFor(x => x.adres, new { @class = "form-control" })
+        <br />
+        @Html.Label("Telefon")
+        @Html.TextBoxFor(x => x.tel, new { @class = "form-control" })
+        <br />
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

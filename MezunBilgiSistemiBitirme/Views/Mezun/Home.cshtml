@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<EntityLayer.Mezun>
+
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mezun Bilgi Sistemi'ne Hoşgeldiniz</h2>
+
+<br />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Toplam Mezun Sayısı</th>
+        <th>Toplam Bölüm Sayısı</th>
+        <th>Toplam Fakülte Sayısı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+    }
+    <tr>
+        <th> </th>
+        <td>@Model.Count()</td>
+        <td>@Model.Count()</td>
+        <td>@Model.Count()</td>
+    </tr>
+</table>

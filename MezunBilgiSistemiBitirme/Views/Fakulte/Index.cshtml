@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<EntityLayer.Fakulte>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Fakülte</h2>
+
+<br />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Fakülte Adı</th>
+        <th>Fakülte Adresi</th>
+        <th>Fakülte Telefonu</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        @*<th>Bölümler</th>*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.fakulteId</th>
+            <td>@item.ad</td>
+            <td>@item.adres</td>
+            <td>@item.tel</td>
+            <td>@item.mail</td>
+            <td><a href="/Fakulte/DeleteFakulte/@item.fakulteId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Fakulte/UpdateFakulte/@item.fakulteId" class="btn btn-warning">Güncelle</a></td>
+            @*<td><a href="#" class="btn btn-primary">Bölümler</a></td>*@
+        </tr>
+    }
+</table>
+<br />
+<a href="/Fakulte/AddFakulte" class="btn btn-info">Yeni Fakülte</a>
+

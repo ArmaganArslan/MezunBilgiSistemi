@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Bolum
+@{
+    ViewBag.Title = "AddBolum";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Bölüm Ekleme</h2>
+<br />
+@using (Html.BeginForm("AddBolum", "Bolum", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Fakülte")
+        @Html.DropDownListFor(x=>x.fakulteId,(List<SelectListItem>)ViewBag.vlf, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Bölüm Adı")
+        @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ad)
+        <br /><br />
+        @Html.Label("Adres")
+        @Html.TextBoxFor(x => x.adres, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.adres)
+        <br /><br />
+        @Html.Label("Telefon")
+        @Html.TextBoxFor(x => x.tel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.tel)
+        <br /><br />
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.mail)
+        <br /><br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}
+

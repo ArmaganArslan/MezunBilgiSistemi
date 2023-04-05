@@ -1,0 +1,57 @@
+﻿@model EntityLayer.Mezun
+@{
+    ViewBag.Title = "UpdateMezun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Mezun Güncelleme</h2>
+@using (Html.BeginForm("UpdateMezun", "Mezun", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("ID")
+        @Html.TextBoxFor(x => x.mezunId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Adı Soyadı")
+        @Html.TextBoxFor(x => x.adSoyad, new { @class = "form-control" })
+        <br />
+        @Html.Label("Adresi")
+        @Html.TextBoxFor(x => x.adres, new { @class = "form-control" })
+        <br />
+        @Html.Label("Telefonu")
+        @Html.TextBoxFor(x => x.tel, new { @class = "form-control" })
+        <br />
+        @Html.Label("Maili")
+        @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+        <br />
+        @Html.Label("Doğum Tarihi")
+        @Html.TextBoxFor(x => x.dogumTarih, new { @class = "form-control" })
+        <br />
+        @Html.Label("Öğrenci No")
+        @Html.TextBoxFor(x => x.ogrNo, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yabancı Dil")
+        @Html.TextBoxFor(x => x.yabanciDil, new { @class = "form-control" })
+        <br />
+        @Html.Label("Bölüm")
+        @Html.DropDownListFor(x => x.bolumId, (List<SelectListItem>)ViewBag.vlb, new { @class = "form-control" })
+        <br />
+        @Html.Label("Başlangıç Yılı")
+        @Html.TextBoxFor(x => x.baslangicYil, new { @class = "form-control" })
+        <br />
+        @Html.Label("Bitiş Yılı")
+        @Html.TextBoxFor(x => x.bitisYil, new { @class = "form-control" })
+        <br />
+        @Html.Label("Ortalama")
+        @Html.TextBoxFor(x => x.ortalama, new { @class = "form-control" })
+        <br />
+        @Html.Label("İlgi Alanı")
+        @Html.TextBoxFor(x => x.ilgiAlan, new { @class = "form-control" })
+        <br />
+        @Html.Label("Staj Yeri")
+        @Html.TextBoxFor(x => x.stajYer, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

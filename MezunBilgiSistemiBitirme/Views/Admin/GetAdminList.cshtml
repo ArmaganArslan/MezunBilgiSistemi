@@ -1,0 +1,26 @@
+﻿@using EntityLayer
+@model List<Admin>
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Mail</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.adminId</td>
+            <td>@item.kullaniciAd</td>
+            <td>@item.sifre</td>
+            <td>@item.mail</td>
+        </tr>
+    }
+</table>

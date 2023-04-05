@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Fakulte
+
+@{
+    ViewBag.Title = "UpdateFakulte";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Fakülte Güncelleme</h2>
+@using (Html.BeginForm("UpdateFakulte", "Fakulte", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.Label("ID")
+                    @Html.TextBoxFor(x => x.fakulteId, new {@class = "form-control"})
+                    <br />
+                    @Html.Label("Fakülte Adı")
+                    @Html.TextBoxFor(x => x.ad, new { @class = "form-control"})
+                    <br />
+                    @Html.Label("Adres")
+                    @Html.TextBoxFor(x => x.adres, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.tel, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Mail")
+                    @Html.TextBoxFor(x => x.mail, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-success">Güncelle</button>
+                </div>
+            }
+
